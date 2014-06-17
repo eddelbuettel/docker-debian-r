@@ -1,9 +1,45 @@
 
-## Docker Image 'add-r'
+## Docker Images for R on Debian
 
-This Dockerfile starts from the standard `debian:testing` image, and adds
+These directories offer several configurations for R on Debian:
 
-* R along with recommended packages
-* littler
+* `add-r`: Starts from `debian:testing` and adds just the R binary via the
+r-base package, as well as littler.  This images carries the default tag `latest`.
 
-but no development packages yet.
+* `add-r-devel`: Starts from `latest` and adds all Build-Depends: for the R
+package as well as subversion; it checks out the current SVN sources of
+R-devel, and then builds R-devel which is installed as
+`/usr/local/bin/Rdevel` to distinguish from `R` which invokes the released version of R.
+This image is installed with tag `add-r-devel`.
+
+* `add-r-devel-san`: Also starts from `latest`, adds everything that
+`add-r-devel` add but then also adds gcc-4.9, g++-4.9 and gfortran-4.9 before
+checking out the current SVN sources of R-devel.  This image then builds
+R-devel from these source using gcc/g++ 4.9 with the Address Sanitizer
+configuration [described in Section 4.3.3 of the Writing R Extension
+manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Address-Sanitizer).
+The binary is also installed as `/usr/local/bin/Rdevel` to distinguish from `R`
+which invokes the released version of R.
+This image is installed with tag `add-r-devel`.
+
+## GitHub repo
+
+See [the GitHub repo](https://github.com/eddelbuettel/docker-debian-r) for
+sources etc.
+
+### Docker Hub
+
+The GitHub  repository is linked to 
+[this automated build facility at Docker](https://registry.hub.docker.com/u/eddelbuettel/docker-debian-r/)
+and one can retrieve the corresponding images via a standard `docker pull`.
+
+### Author
+
+Dirk Eddelbuettel
+
+### License
+
+GPL (>= 2)
+
+
+
