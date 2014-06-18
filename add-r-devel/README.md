@@ -20,7 +20,18 @@ configuration [described in Section 4.3.3 of the Writing R Extension
 manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Address-Sanitizer).
 The binary is also installed as `/usr/local/bin/Rdevel` to distinguish from `R`
 which invokes the released version of R.
-This image is installed with tag `add-r-devel`.
+This image is installed with tag `add-r-devel-san`.
+
+* `add-r-devel-ubsan`: Also starts from `latest`, adds everything that
+`add-r-devel` add but then also adds gcc-4.9, g++-4.9 and gfortran-4.9 before
+checking out the current SVN sources of R-devel.  This image then builds
+R-devel from these source using gcc/g++ 4.9 with the Undefined Behaviour Sanitizer
+configuration [described in Section 4.3.4 of the Writing R Extension
+manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer).
+We had to disable OpenMP for this build.
+The binary is also installed as `/usr/local/bin/Rdevel` to distinguish from `R`
+which invokes the released version of R.
+This image is installed with tag `add-r-devel-ubsan`.
 
 ## GitHub repo
 

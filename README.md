@@ -1,8 +1,8 @@
 
 ## Docker for R on Debian
 
-This repository contains several Dockerfiles defining Docker images which
-build on the default Debian image for Docker. 
+This repository contains Dockerfiles defining images which extend the default
+Debian image for Docker. The is on making R development and testing easier.
 
 ### Docker Images
 
@@ -14,6 +14,9 @@ all tools required to build R-devel from source
 * add-r-devel-san: This image builds R-devel from source using gcc/g++ 4.9
 with the Address Sanitizer configuration [described in Section 4.3.3 of the
 Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Address-Sanitizer)
+* add-r-devel-ubsan: This image builds R-devel from source using gcc/g++ 4.9
+with the Address Sanitizer configuration [described in Section 4.3.4 of the
+Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer)
 
 ### Docker Hub
 
