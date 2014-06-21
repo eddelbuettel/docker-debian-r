@@ -24,6 +24,14 @@ This repository is linked to
 [this automated build facility at Docker](https://registry.hub.docker.com/u/eddelbuettel/docker-debian-r/)
 and one can retrieve the corresponding images via a standard `docker pull`.
 
+#### Open build issues
+
+* The interdependence between the different recipes in the same repo does not
+seem to work reliable. This needs to be sorted out as one-repo-per-build is
+clearly suboptimal.
+* We are also testing these on the inofficial i386 variant where the fuller
+specification create files that are larger than 2gb wh
+
 ### Author
 
 Dirk Eddelbuettel
