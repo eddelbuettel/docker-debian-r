@@ -2,21 +2,21 @@
 ## Docker for R on Debian
 
 This repository contains Dockerfiles defining images which extend the default
-Debian image for Docker. The is on making R development and testing easier.
+Debian image for Docker. The aim is on making R development and testing easier.
 
 ### Docker Images
 
 We start from Debian testing and then add
 
-* add-r:  This image adds the R executable
+* add-r:  This image adds just the R executable. Other images below depend on it.
 * add-r-devel: This image adds a freshly-built R-devel version, as well as
-all tools required to build R-devel from source
+all tools required to build R-devel from source.
 * add-r-devel-san: This image builds R-devel from source using gcc/g++ 4.9
 with the Address Sanitizer configuration [described in Section 4.3.3 of the
-Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Address-Sanitizer)
+Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Address-Sanitizer).
 * add-r-devel-ubsan: This image builds R-devel from source using gcc/g++ 4.9
 with the Address Sanitizer configuration [described in Section 4.3.4 of the
-Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer)
+Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer).
 
 ### Docker Hub
 
@@ -26,10 +26,7 @@ and one can retrieve the corresponding images via a standard `docker pull`.
 
 #### Open build issues
 
-* The interdependence between the different recipes in the same repo does not
-seem to work reliable. This needs to be sorted out as one-repo-per-build is
-clearly suboptimal.
-* We are also testing these on the inofficial i386 variant where the fuller
+* We are testing these on the inofficial i386 variant where the fuller
 specification create files that are larger than 2gb wh
 
 ### Author

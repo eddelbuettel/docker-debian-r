@@ -1,10 +1,13 @@
 
 ## Docker Images for R on Debian
 
-These directories offer several configurations for R on Debian:
+These directories offer several configurations for R on Debian. Each
+subdirectory corresponds to one distinct build, and each is available under
+the same tag as its directory name:
 
 * `add-r`: Starts from `debian:testing` and adds just the R binary via the
-r-base package, as well as littler.  This images carries the default tag `latest`.
+r-base package, as well as littler.  This images used to carry the default
+tag `latest`. For consistency this was renamed to tag `add-r`.
 
 * `add-r-devel`: Starts from `latest` and adds all Build-Depends: for the R
 package as well as subversion; it checks out the current SVN sources of

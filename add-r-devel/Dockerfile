@@ -1,6 +1,6 @@
 ## Emacs, make this -*- mode: makefile; -*-
-## start with the Debian docker-debian-r/latest which has R on top of testing
-FROM eddelbuettel/docker-debian-r:latest
+## start with the Debian docker-debian-r/add-r which has R on top of testing
+FROM eddelbuettel/docker-debian-r:add-r
 
 ## That's me
 MAINTAINER Dirk Eddelbuettel edd@debian.org
