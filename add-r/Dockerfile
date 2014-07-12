@@ -10,7 +10,7 @@ RUN apt-get dist-upgrade -y
 
 ## Add Debian unstable to get R 3.1.1 (release 2014-07-10) which has not 
 ## yet migrated to testing
-RUN echo "deb http://http.debian.net/debian testing main" > /etc/apt/sources.list.d/unstable.list
+RUN echo "deb http://http.debian.net/debian unstable main" > /etc/apt/sources.list.d/unstable.list
 RUN apt-get update -qq
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
