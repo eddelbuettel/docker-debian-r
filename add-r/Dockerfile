@@ -1,3 +1,5 @@
+## Emacs, make this -*- mode: sh; -*-
+
 ## start with the Debian testing
 FROM debian:testing
 

@@ -1,4 +1,5 @@
-## Emacs, make this -*- mode: makefile; -*-
+## Emacs, make this -*- mode: sh; -*-
+
 ## start with the Debian docker-debian-r/add-r which has R on top of testing
 FROM eddelbuettel/docker-debian-r:add-r
 

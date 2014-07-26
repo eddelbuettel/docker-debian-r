@@ -17,17 +17,18 @@ Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.h
 * add-r-devel-ubsan: This image builds R-devel from source using gcc/g++ 4.9
 with the Address Sanitizer configuration [described in Section 4.3.4 of the
 Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer).
-
+s
 ### Docker Hub
 
 This repository is linked to 
 [this automated build facility at Docker](https://registry.hub.docker.com/u/eddelbuettel/docker-debian-r/)
 and one can retrieve the corresponding images via a standard `docker pull`.
 
-#### Open build issues
+### See Also
 
-* We are testing these on the inofficial i386 variant where the fuller
-specification create files that are larger than 2gb wh
+There is a corresponding 
+[Docker for R on Ubuntu repo](https://github.com/eddelbuettel/docker-ubuntu-r) 
+I also maintain. 
 
 ### Author
 
