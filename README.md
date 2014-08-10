@@ -17,7 +17,7 @@ Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.h
 * add-r-devel-ubsan: This image builds R-devel from source using gcc/g++ 4.9
 with the Address Sanitizer configuration [described in Section 4.3.4 of the
 Writing R Extension manual](http://cran.rstudio.com/doc/manuals/r-devel/R-exts.html#Using-Undefined-Behaviour-Sanitizer).
-s
+
 ### Docker Hub
 
 This repository is linked to 
