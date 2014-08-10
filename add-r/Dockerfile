@@ -16,11 +16,17 @@ RUN echo "deb http://http.debian.net/debian unstable main" > /etc/apt/sources.li
 RUN apt-get update -qq
 
 ## Now install R and littler, and create a link for littler in /usr/local/bin
-RUN apt-get install -y --no-install-recommends r-base r-base-dev r-recommended littler
+## We do this in different commands as each command leads to a different aufs layer
+RUN apt-get install -y --no-install-recommends r-base 
+RUN apt-get install -y --no-install-recommends r-base-dev 
+RUN apt-get install -y --no-install-recommends r-recommended littler
+RUN apt-get install -y --no-install-recommends littler
 RUN ln -s /usr/share/doc/littler/examples/install.r /usr/local/bin/install.r
 
 ## Install a few more things that are useful
 RUN apt-get install -y --no-install-recommends vim-tiny
+RUN apt-get install -y --no-install-recommends less
+RUN apt-get install -y --no-install-recommends wget
 
 
 ## can be launched / used from the command-line via 
