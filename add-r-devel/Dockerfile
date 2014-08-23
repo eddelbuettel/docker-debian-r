@@ -11,7 +11,29 @@ RUN apt-get update -qq
 RUN apt-get dist-upgrade -y
 
 ## From the Build-Depends of the Debian R package, plus subversion
-RUN apt-get install -y --no-install-recommends gcc g++ gfortran libblas-dev liblapack-dev tcl8.5-dev tk8.5-dev bison groff-base libncurses5-dev libreadline-dev debhelper texinfo libbz2-dev liblzma-dev libpcre3-dev xdg-utils zlib1g-dev libpng-dev libjpeg-dev libx11-dev libxt-dev x11proto-core-dev libpango1.0-dev libcairo2-dev libtiff5-dev xvfb xauth xfonts-base texlive-base texlive-latex-base texlive-generic-recommended texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils texlive-latex-recommended texlive-latex-extra default-jdk mpack bash-completion subversion 
+## We do this in different commands as each command leads to a different aufs layer
+## Yet group a few 'similar' ones together to not have dozens of RUN invocations
+RUN apt-get install -y --no-install-recommends gcc g++ gfortran 
+RUN apt-get install -y --no-install-recommends libblas-dev liblapack-dev 
+RUN apt-get install -y --no-install-recommends tcl8.5-dev tk8.5-dev 
+RUN apt-get install -y --no-install-recommends bison groff-base 
+RUN apt-get install -y --no-install-recommends libncurses5-dev libreadline-dev 
+RUN apt-get install -y --no-install-recommends debhelper bash-completion 
+RUN apt-get install -y --no-install-recommends texinfo 
+RUN apt-get install -y --no-install-recommends libbz2-dev liblzma-dev zlib1g-dev 
+RUN apt-get install -y --no-install-recommends libpcre3-dev 
+RUN apt-get install -y --no-install-recommends xdg-utils 
+RUN apt-get install -y --no-install-recommends libpng-dev libjpeg-dev 
+RUN apt-get install -y --no-install-recommends libx11-dev libxt-dev x11proto-core-dev 
+RUN apt-get install -y --no-install-recommends libpango1.0-dev libcairo2-dev libtiff5-dev 
+RUN apt-get install -y --no-install-recommends xvfb xauth xfonts-base 
+RUN apt-get install -y --no-install-recommends texlive-base texlive-latex-base 
+RUN apt-get install -y --no-install-recommends texlive-generic-recommended 
+RUN apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-fonts-extra 
+RUN apt-get install -y --no-install-recommends texlive-extra-utils texlive-latex-recommended texlive-latex-extra 
+RUN apt-get install -y --no-install-recommends default-jdk 
+RUN apt-get install -y --no-install-recommends mpack 
+RUN apt-get install -y --no-install-recommends subversion 
 
 ## Check out R-devel
 RUN cd /tmp && svn co http://svn.r-project.org/R/trunk R-devel 

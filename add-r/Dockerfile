@@ -19,7 +19,7 @@ RUN apt-get update -qq
 ## We do this in different commands as each command leads to a different aufs layer
 RUN apt-get install -y --no-install-recommends r-base 
 RUN apt-get install -y --no-install-recommends r-base-dev 
-RUN apt-get install -y --no-install-recommends r-recommended littler
+RUN apt-get install -y --no-install-recommends r-recommended 
 RUN apt-get install -y --no-install-recommends littler
 RUN ln -s /usr/share/doc/littler/examples/install.r /usr/local/bin/install.r
 
